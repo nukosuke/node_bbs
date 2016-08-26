@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/nukosuke/node_bbs/issues"
   },
-  "homepage": "https://github.com/nukosuke/node_bbs#readme"
+  "homepage": "https://github.com/nukosuke/node_bbs#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta5"
+  }
 }
