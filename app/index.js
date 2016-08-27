@@ -18,14 +18,18 @@ var models = require('./database');
  * スレッド一覧ページ
  */
 app.get('/', (req, res) => {
-  var limit = req.query.limit || 25;
-  var page  = req.query.page  || 1;
+  var limit = parseInt(req.query.limit, 10) || 1;
+  var page  = parseInt(req.query.page, 10)  || 1;
 
   models.Thread.paginate({}, {page, limit}, (err, result) => {
     if(err) {
       return res.status(500);
     }
-    res.render('index', { threads: result.docs });
+    res.render('index', {
+      threads: result.docs,
+      page: result.page,
+      pages: result.pages
+    });
   });
 });
 
