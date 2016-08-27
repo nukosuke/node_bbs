@@ -1,0 +1,10 @@
+form(action='/threads/'+thread._id+'/new' method='POST')
+  input(type='hidden' name='_csrf' value=csrfToken)
+
+  label(for='name') 名前
+  input(id='name' type='text' name='name')
+
+  label(for='body') 本文
+  textarea(id='body' name='body')
+
+  input(type='submit' value='投稿')

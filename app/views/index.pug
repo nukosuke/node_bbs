@@ -1,0 +1,13 @@
+extend _layout.pug
+
+block content
+  h1 スレッド一覧
+  a(href='/threads/new') スレッドを作成
+  ul
+    for t in threads
+      li
+        a(href='/threads/'+t._id)
+          = t.title
+          | &nbsp;--&nbsp;
+          = t.responses.length
+          | レス
