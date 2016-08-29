@@ -1,0 +1,27 @@
+.center
+  ul.pagination
+    // ひとつ前のページ
+    if page-1 > 0
+      li.waves-effect
+        a(href='/?page='+(page-1))
+          i.material-icons chevron_left
+    else
+      li.disabled
+        a(href='#!')
+          i.material-icons chevron_left
+
+    // 各ページ
+    - var i = 1
+    while i <= pages
+      li(class=(i === page ? 'active' : 'waves-effect'))
+        a(href='/?page='+i+'&limit='+limit)= i++
+
+    // ひとつ後のページ
+    if page+1 <= pages
+      li.waves-effect
+        a(href='/?page='+(page+1))
+          i.material-icons chevron_right
+    else
+      li.disabled
+        a(href='#!')
+          i.material-icons chevron_right
