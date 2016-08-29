@@ -1,16 +1,15 @@
 extend _layout.pug
 
 block content
-  a(href='/') &laquo;スレッド一覧に戻る
+  a(href='/') &laquo;&nbsp;スレッド一覧に戻る
 
   h1
     = thread.title
-  hr
-  ul
+  ul.collection
+    - var i = 1
     for r in thread.responses
-      li
-        = r.name
-        | &nbsp;&gt;&nbsp;
-        = r.body
+      li.collection-item
+        span.title #{i++}&nbsp;:&nbsp;#{r.name}
+        p= r.body
 
   include _form_response.pug
